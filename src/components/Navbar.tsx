@@ -26,11 +26,11 @@ const Navbar = () => {
       <li>
         <Link
           className={
-            pathName === "/plan"
+            pathName === "/myPlan"
               ? "text-[#c2f800] border border-[#1a2312] bg-[#1a2312] rounded-2xl px-4 py-1.5 font-medium"
               : "text-gray-300 hover:text-white px-3 py-1.5"
           }
-          href="/plan"
+          href="/myPlan"
         >
           My Plan
         </Link>
