@@ -1,10 +1,12 @@
-import ExerciseCard from "@/components/exercise/ExerciseCard";
-import { getData } from "@/lib/GetData";
+import React from "react";
+import ExerciseCard from "./ExerciseCard";
 import { IExercise } from "@/types/data.type";
-
-const WorkoutPage = async () => {
+import { getData } from "@/lib/GetData";
+const Exercise = async () => {
   const allData = await getData();
+
   return (
+   
     <div className="container mx-auto my-15">
       <h1 className="font-bold text-3xl">THE LIBRARY</h1>
       <p>Twelve lifts covering every major muscle group.</p>
@@ -15,7 +17,8 @@ const WorkoutPage = async () => {
         ))}
       </div>
     </div>
+   
   );
 };
 
-export default WorkoutPage;
+export default Exercise;
