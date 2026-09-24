@@ -23,7 +23,7 @@ const Banner = () => {
 
           <p className="text-gray-400 text-xs sm:text-sm lg:text-base leading-relaxed max-w-lg mx-auto md:mx-0">
             FitLog is a dark, no-nonsense gym companion: pick a lift, lock it
-            into today's plan, and watch the week's work add up.
+            into todays plan, and watch the weeks work add up.
           </p>
 
           <div className="pt-2">

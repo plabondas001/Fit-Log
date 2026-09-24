@@ -1,7 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Bookmark, CalendarPlus, Clock3, Flame, Star } from "lucide-react";
+import { Clock3, Flame, Star } from "lucide-react";
 import { IExercise } from "@/types/data.type";
+import PlanButton from "../button/planButton/PlanButton";
+import SaveButton from "../button/saveButton/SaveButton";
 
 interface ExerciseDetailsProps {
   exercise: IExercise;
@@ -86,21 +88,8 @@ const ExerciseDetails = ({ exercise }: ExerciseDetailsProps) => {
               </div>
 
               <div className="mt-6 flex flex-wrap gap-3">
-                <button
-                  type="button"
-                  className="flex items-center gap-2 rounded-lg bg-[#b6ff00] px-4 py-2.5 cursor-pointer text-[12px] font-bold text-black transition hover:bg-[#c8ff3d]"
-                >
-                  <CalendarPlus size={15} />
-                  Add to today's plan
-                </button>
-
-                <button
-                  type="button"
-                  className="flex items-center gap-2 rounded-lg border border-zinc-700 px-4 py-2.5 cursor-pointer text-[12px] font-medium text-zinc-300 transition hover:bg-zinc-800"
-                >
-                  <Bookmark size={15} />
-                  Save for later
-                </button>
+                <PlanButton exercisePlan={exercise} />
+                <SaveButton exercise={exercise} />
               </div>
             </div>
           </div>

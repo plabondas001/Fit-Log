@@ -1,6 +1,7 @@
 import ExerciseDetailsCard from "@/components/exercise/ExerciseDetailsCard";
 import { getData } from "@/lib/GetData";
 import { IExercise } from "@/types/data.type";
+import { notFound } from "next/navigation";
 import React from "react";
 
 interface IExerciseParams {
@@ -16,6 +17,10 @@ const ExerciseDetailsPage = async ({ params }: IExerciseParams) => {
   const exercise = data.find(
     (exercise: IExercise) => exercise.id === Number(id),
   );
+
+  if(!exercise){
+    return notFound()
+  }
 
   return (
     <div>

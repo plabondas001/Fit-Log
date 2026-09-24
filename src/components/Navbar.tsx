@@ -5,9 +5,12 @@ import logo from "@/assets/logo.png";
 import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useContext } from "react";
+import { ExerciseContext } from "@/context/ExerciseProvider";
 
 const Navbar = () => {
   const pathName = usePathname();
+  const { plan, saved, setActivePlanTab } = useContext(ExerciseContext);
 
   const links = (
     <>
@@ -61,28 +64,26 @@ const Navbar = () => {
         </ul>
 
         <div className="flex items-center gap-2 sm:gap-3 order-2 md:order-3">
-          <Link href="/plan">
-            <button
-              type="button"
-              className="bg-[#CCFF00] hover:bg-[#b8e600] cursor-pointer text-black font-semibold text-xs sm:text-sm px-3.5 py-1.5 rounded-full flex items-center gap-2 transition-all border-none outline-none"
-            >
-              <span>Plan</span>
-              <span className="w-5 h-5 rounded-full bg-black text-[#CCFF00] text-[11px] font-bold flex items-center justify-center">
-                0
-              </span>
-            </button>
+          <Link
+            href="/myPlan"
+            onClick={() => setActivePlanTab("today")}
+            className="bg-[#CCFF00] hover:bg-[#b8e600] text-black font-semibold text-xs sm:text-sm px-3.5 py-1.5 rounded-full flex items-center gap-2 transition-all"
+          >
+            <span>Plan</span>
+            <span className="w-5 h-5 rounded-full bg-black text-[#CCFF00] text-[11px] font-bold flex items-center justify-center">
+              {plan.length}
+            </span>
           </Link>
 
-          <Link href="/plan">
-            <button
-              type="button"
-              className="border border-gray-700 hover:border-gray-500 cursor-pointer text-white text-xs sm:text-sm px-3.5 py-1.5 rounded-full flex items-center gap-2 transition-all bg-transparent outline-none"
-            >
-              <span>Saved</span>
-              <span className="w-5 h-5 rounded-full border border-gray-600 text-gray-300 text-[11px] font-medium flex items-center justify-center">
-                0
-              </span>
-            </button>
+          <Link
+            href="/myPlan"
+            onClick={() => setActivePlanTab("saved")}
+            className="border border-gray-700 hover:border-gray-500 text-white text-xs sm:text-sm px-3.5 py-1.5 rounded-full flex items-center gap-2 transition-all"
+          >
+            <span>Saved</span>
+            <span className="w-5 h-5 rounded-full border border-gray-600 text-gray-300 text-[11px] font-medium flex items-center justify-center">
+              {saved.length}
+            </span>
           </Link>
         </div>
       </nav>
