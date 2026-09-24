@@ -1,48 +1,52 @@
-# Fit Log
+# 🏋️ Fit Log
 
-Fit Log is a workout planning app for browsing exercises, building a daily routine, and keeping a list of exercises to try later. The exercise library includes details such as duration, rating, and estimated calories burned to help you plan a session.
+**Fit Log** is a workout planning app where you can explore exercises, view exercise details, create a daily workout plan, and save exercises for later.
 
-## Features
+## ✨ Features
 
-- Browse a library of exercises and open individual exercise detail pages.
-- Add exercises to a plan for today.
-- Save exercises for later and switch between the daily plan and saved list.
-- Mark planned exercises as complete.
-- Sort exercises by duration, rating, or estimated calories burned.
-- View exercise, time, and calorie totals for the selected list.
-- Responsive interface with loading and not-found pages.
+* Browse **12 exercises** covering major muscle groups
+* View detailed exercise information
+* Add exercises to your daily workout plan
+* Save exercises for later
+* Mark planned exercises as complete
+* Sort exercises by duration, rating, and calories
+* View total exercises, workout time, and calories
+* Responsive design with loading and not-found pages
+* Toast notifications for user actions
 
-## Technologies
+## 🛠️ Technologies
 
-- [Next.js](https://nextjs.org/) 16 with the App Router
-- [React](https://react.dev/) 19
-- [TypeScript](https://www.typescriptlang.org/)
-- [Tailwind CSS](https://tailwindcss.com/) 4 and [DaisyUI](https://daisyui.com/)
-- [Lucide React](https://lucide.dev/) icons
-- [React Toastify](https://fkhadra.github.io/react-toastify/) notifications
-- Exercise data from the Fit Log API
+* Next.js 16
+* React 19
+* TypeScript
+* Tailwind CSS 4
+* DaisyUI
+* Lucide React
+* React Toastify
+* Fit Log API
 
-## Getting started
-
-### Requirements
-
-- Node.js
-- npm
-
-### Install and run
+## 🚀 Getting Started
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Then open:
 
-## Available scripts
+```text
+http://localhost:3000
+```
 
-| Command | Description |
-| --- | --- |
-| `npm run dev` | Start the local development server. |
-| `npm run build` | Create a production build. |
-| `npm run start` | Start the production server. |
-| `npm run lint` | Run ESLint. |
+## 📜 Scripts
+
+| Command         | Description              |
+| --------------- | ------------------------ |
+| `npm run dev`   | Start development server |
+| `npm run build` | Build the application    |
+| `npm run start` | Start production server  |
+| `npm run lint`  | Run ESLint               |
+
+## 👨‍💻 Author
+
+**Plabon Das**
