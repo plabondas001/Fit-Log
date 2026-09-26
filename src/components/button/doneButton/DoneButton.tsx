@@ -5,31 +5,27 @@ import { ExerciseContext } from "@/context/ExerciseProvider";
 import { useContext } from "react";
 import { toast } from "react-toastify";
 
-const DoneButton = ({ exerciseId, exerciseName }: { exerciseId: number; exerciseName: string }) => {
-  const { doneExerciseIds, setDoneExerciseIds } = useContext(ExerciseContext);
-  const isDone = doneExerciseIds.includes(exerciseId);
+const DoneButton = ({ exerciseId }: { exerciseId: number }) => {
+  const { plan, setPlan } = useContext(ExerciseContext);
 
-  const toggleDone = () => {
-    if (isDone) {
-      setDoneExerciseIds((current) => current.filter((id) => id !== exerciseId));
-      toast.info(`${exerciseName} marked as not done.`);
-      return;
+  const markAsDone = () => {
+    const removedExercise = plan.find((exercise) => exercise.id === exerciseId);
+
+    setPlan(plan.filter((exercise) => exercise.id !== exerciseId));
+
+    if (removedExercise) {
+      toast.success("Exercise marked as done!");
     }
-
-    setDoneExerciseIds((current) => [...current, exerciseId]);
-    toast.success(`${exerciseName} marked as done!`);
   };
 
   return (
     <button
       type="button"
-      onClick={toggleDone}
-      className={`btn btn-sm rounded-full border-0 px-5 text-xs font-bold ${
-        isDone ? "bg-zinc-700 text-white" : "bg-[#b6ff00] text-black hover:bg-[#c8ff3d]"
-      }`}
+      onClick={markAsDone}
+      className="btn btn-sm rounded-full border-0 bg-[#b6ff00] px-5 text-xs font-bold text-black hover:bg-[#c8ff3d]"
     >
       <Check size={15} />
-      {isDone ? "Completed" : "Mark as Done"}
+      Mark as Done
     </button>
   );
 };

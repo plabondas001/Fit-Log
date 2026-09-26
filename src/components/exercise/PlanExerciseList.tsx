@@ -79,7 +79,7 @@ const PlanExerciseList = ({ exercise, list }: PlanExerciseListProps) => {
         </Link>
 
         
-        {list === "today" && <DoneButton exerciseId={exercise.id} exerciseName={exercise.name} />}
+        {list === "today" && <DoneButton exerciseId={exercise.id} />}
 
         
         <Remove exerciseId={exercise.id} exerciseName={exercise.name} list={list} />
